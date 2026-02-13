@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zuni's Valentine 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="landing-box">
+    <h1>Zuni 💖</h1>
+    <p>Click the button below to open your Valentine surprise!</p>
+    <button onclick="goToProposal()">Open Your Surprise</button>
+</div>
+
+<script>
+function goToProposal() {
+    window.location.href = "proposal.html";
+}
+
+// Floating hearts
+for(let i=0;i<20;i++){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random()*100+'vw';
+    heart.style.animationDuration = (5 + Math.random()*5)+'s';
+    heart.style.fontSize = (20+Math.random()*15)+'px';
+    document.body.appendChild(heart);
+}
+
+// Floating tulips
+for(let i=0;i<15;i++){
+    const tulip = document.createElement('div');
+    tulip.className = 'flower';
+    tulip.innerHTML = '🌷';
+    tulip.style.left = Math.random()*100+'vw';
+    tulip.style.animationDuration = (6 + Math.random()*6)+'s';
+    tulip.style.fontSize = (25+Math.random()*15)+'px';
+    document.body.appendChild(tulip);
+}
+</script>
+
+</body>
+</html>
+
+

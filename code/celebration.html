@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yayaaayaaa 💕🌸</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <h1>Yayaaayaaa 💕🌸</h1>
+</div>
+
+<script src="confetti.js"></script>
+
+<script>
+// Falling tulips
+for(let i=0;i<40;i++){
+    const tulip = document.createElement('div');
+    tulip.className = 'flower';
+    tulip.innerHTML = '🌷';
+    tulip.style.left = Math.random()*100+'vw';
+    tulip.style.animationDuration = (5 + Math.random()*5)+'s';
+    tulip.style.fontSize = (25+Math.random()*15)+'px';
+    document.body.appendChild(tulip);
+}
+
+// Floating hearts
+for(let i=0;i<30;i++){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random()*100+'vw';
+    heart.style.animationDuration = (4 + Math.random()*4)+'s';
+    heart.style.fontSize = (20+Math.random()*15)+'px';
+    document.body.appendChild(heart);
+}
+
+// Trigger confetti effect
+startConfetti();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zuni, Will You Be My Valentine? 💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <h1 id="message"></h1>
+    <div class="buttons">
+        <button class="yes" onclick="goToCelebration()">Yes 💘</button>
+        <button class="no" onmouseover="moveButton(this)" ontouchstart="moveButton(this)">No 💔</button>
+    </div>
+</div>
+
+<script>
+const msg = "Hey Zuni 💕, will you be my Valentine?";
+let index = 0;
+function typeMessage(){
+    if(index < msg.length){
+        document.getElementById('message').innerHTML += msg.charAt(index);
+        index++;
+        setTimeout(typeMessage,100);
+    }
+}
+typeMessage();
+
+function goToCelebration(){
+    window.location.href = "celebration.html";
+}
+
+// Move No button randomly
+function moveButton(button){
+    const maxX = window.innerWidth - button.offsetWidth;
+    const maxY = window.innerHeight - button.offsetHeight;
+    button.style.position = 'absolute';
+    button.style.left = Math.random()*maxX+'px';
+    button.style.top = Math.random()*maxY+'px';
+}
+
+// Floating flowers
+for(let i=0;i<25;i++){
+    const tulip = document.createElement('div');
+    tulip.className = 'flower';
+    tulip.innerHTML = '🌷';
+    tulip.style.left = Math.random()*100+'vw';
+    tulip.style.animationDuration = (5 + Math.random()*5)+'s';
+    tulip.style.fontSize = (25+Math.random()*15)+'px';
+    document.body.appendChild(tulip);
+}
+
+// Floating hearts
+for(let i=0;i<15;i++){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random()*100+'vw';
+    heart.style.animationDuration = (6 + Math.random()*5)+'s';
+    heart.style.fontSize = (20+Math.random()*10)+'px';
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
